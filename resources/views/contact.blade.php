@@ -28,7 +28,7 @@
             </div>
           @endif
 
-          <form action="/contact" method="POST" class="p-5 bg-light">
+        <form method="POST" class="p-5 bg-light" action="{{ route('contact.post') }}">
             <div class="row form-group">
             <span class="font-weight-bold">Contact  Us</span>
             </div>
@@ -67,10 +67,6 @@
                 @enderror
               </div>
             </div>
-            
-            {{-- <div class="row form-group">
-              
-            </div> --}}
 
             <div class="row form-group">
               
@@ -93,15 +89,6 @@
               </div>
             </div>
             
-            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-              <div class="col-md-12">
-              <label class="text-black" for="Captcha">Captcha</label>
-                {!! app('captcha')->display() !!}
-                @if ($errors->has('g-recaptcha-response'))
-                        <strong style="color: #f23a2e;">Please verify that you’re a human</strong>
-                @endif
-              </div>
-            </div>
 
             <div class="row form-group">
               <div class="col-md-12">
@@ -140,7 +127,6 @@
 @endsection
 
 @section('script')
-{!! NoCaptcha::renderJs() !!}
 <script>
 $(document).ready(function() {
   $("#submitForm").click(function() {    

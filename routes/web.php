@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\IncoTermsAjaxController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrackAjaxController;
+use App\Http\Controllers\UserRequestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -50,14 +53,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/contact', 'ContactController@contact');
-Route::post('contact', ['as' => 'contactus', 'uses' => 'ContactController@contactPost']);
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('/contact', [ContactController::class, 'contactPost'])->name('contact.post');
 
-Route::get('/userrequest/{id}', 'UserRequestController@userRequest');
-Route::post('/userrequest', ['as' => 'userrequest', 'uses' => 'UserRequestController@userRequestPost']);
+Route::get('/userrequest/{id}', [UserRequestController::class, 'userRequest'])->name('userrequest');
+Route::post('/userrequest', [UserRequestController::class, 'userRequestPost'])->name('userrequest.post');
 
-Route::get('incoterms', 'IncoTermsAjaxController@index');
-Route::post('incoterms', 'IncoTermsAjaxController@ajaxIncoTermsPost')->name('ajaxIncoTerms.post');
+Route::get('incoterms', [IncoTermsAjaxController::class, 'ajaxIncoTerms'])->name('ajaxIncoTerms');
+Route::post('incoterms', [IncoTermsAjaxController::class, 'getIncoTerms'])->name('getIncoTerms');
 
 Route::get('/track-shipment', [TrackAjaxController::class, 'index'])->name('track.index');
 Route::post('/track-shipment', [TrackAjaxController::class, 'track'])->name('track.ajax');

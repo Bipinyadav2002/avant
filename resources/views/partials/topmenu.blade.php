@@ -60,7 +60,7 @@
                         <li><a href="{{ route('hazardous') }}">hazardous cargo</a></li>
                         <li><a href="{{ route('customercenter') }}">customer center</a></li>
                         <li><a href="{{ route('about') }}">about us</a></li>
-                        <li><a href="/contact">contact</a></li>
+                        <li><a href="{{ route('contact')}}">contact</a></li>
                         <li>@if (Auth::check() && (Request::is('customercenter') || Request::is('account_invoices')|| Request::is('track-shipment')))
                     <div class="user-profile-box mt-4 me-4 p-3 d-none d-md-block"
                         style="position: absolute; top: 20px; right: 20px; border-radius: 8px; z-index: 1000; text-align: right; background: transparent; box-shadow: none;">
