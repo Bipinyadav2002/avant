@@ -103,6 +103,41 @@
                 </div>
 
             @endguest
+            @auth
+            <div class="col-md-4">
+                <div class="feature-3 pricing h-100 text-center"
+                    style="background-color:#343a40 !important; color:#fff;">
+
+                    <div>
+                        <span>
+                            <img src="{{ asset('img/logo_white_svg.svg') }}" alt="User Icon" style="width: 6em;">
+                        </span>
+                    </div>
+
+                    <h2 class="my-4 heading text-white">
+                        Welcome, {{ Auth::user()->name }}
+                    </h2>
+
+                    <p class="text-light">
+                        Access your shipments, track consignments,
+                        and manage your logistics seamlessly with us.
+                    </p>
+
+                    <div class="mt-4 d-flex justify-content-center align-items-center flex-wrap">
+                        <a href="{{ route('track.index') }}"
+                            class="btn btn-warning px-4 py-2 font-weight-bold mx-2 mb-2">
+                            Track Shipment
+                        </a>
+
+                        <!-- <a href="{{ route('customercenter') }}"
+                            class="btn btn-warning px-4 py-2 font-weight-bold mx-2 mb-2">
+                            Customer Center
+                        </a> -->
+                    </div>
+
+                </div>
+            </div>
+            @endauth
             <!-- Mission -->
             <div class="col-md-4">
                 <div class="feature-3 pricing h-100 text-center">

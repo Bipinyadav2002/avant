@@ -40,9 +40,9 @@
             <div class="col-12 col-md-10 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                        <li class="active"><a href="{{ route('login') }}">home</a></li>
+                        <li class="active"><a href="{{ route('login') }}">Home</a></li>
                         <li class="has-children">
-                            <a href="{{ url('/oceanfreight#headingOne') }}">ocean freight</a>
+                            <a href="{{ url('/oceanfreight#headingOne') }}">Ocean Freight</a>
                             <ul class="dropdown">
                                 <li><a class="oceanfreight" href="{{ url('/oceanfreight#headingOne') }}">lcl
                                         consolidation</a></li>
@@ -57,10 +57,10 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('airfreight') }}">Air Freight</a></li>
-                        <li><a href="{{ route('hazardous') }}">hazardous cargo</a></li>
-                        <li><a href="{{ route('customercenter') }}">customer center</a></li>
-                        <li><a href="{{ route('about') }}">about us</a></li>
-                        <li><a href="{{ route('contact')}}">contact</a></li>
+                        <li><a href="{{ route('hazardous') }}">Hazardous Cargo</a></li>
+                        <li><a href="{{ route('customercenter') }}">Customer Center</a></li>
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li><a href="{{ route('contact')}}">Contact</a></li>
                         <li>@if (Auth::check() && (Request::is('customercenter') || Request::is('account_invoices')|| Request::is('track-shipment')))
                     <div class="user-profile-box mt-4 me-4 p-3 d-none d-md-block"
                         style="position: absolute; top: 20px; right: 20px; border-radius: 8px; z-index: 1000; text-align: right; background: transparent; box-shadow: none;">
