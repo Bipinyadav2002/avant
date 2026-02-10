@@ -7,10 +7,20 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrackAjaxController;
 use App\Http\Controllers\UserRequestController;
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
+});
+
+Route::get('/check-db', function () {
+    try {
+        DB::connection()->getPdo();
+        return "Database is connected successfully.";
+    } catch (\Exception $e) {
+        return "Could not connect to the database. Please check your configuration. Error: " . $e->getMessage();
+    }
 });
 
 Route::get('/login', function () {
